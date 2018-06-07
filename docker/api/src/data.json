@@ -1,8 +1,8 @@
 {
 	"title": "Words",
 	"title_desc": "This is an example python app that gets these words from a NodeJS API.",
-	"word": "Dream",
-	"definition": "A succession of images, ideas, emotions, and sensations that usually occur involuntarily in the mind during certain stages of sleep.",
-	"info": "The content and purpose of dreams are not fully understood, though they have been a topic of scientific speculation, as well as a subject of philosophical and religious interest, throughout recorded history. Dream interpretation is the attempt at drawing meaning from dreams and searching for an underlying message. The scientific study of dreams is called oneirology.",
-	"source": "https://en.wikipedia.org/wiki/Dream"
+	"word": "Twelve-factor Applications",
+	"definition": "A Heroku developed methodology for developers to follow when building modern web-based applications. Also applies when running applications in kubernetes",
+	"info": "<b>1 Codebase</b> One codebase tracked in revision control, many deploys</br><b>2 Dependencies</b> Explicitly declare and isolate dependencies</br><b>3 Config</b> Store config in the environment</br><b>4 Backing Services</b> Treat backing services as attached resources</br><b>5 Build, release, run</b> Strictly separate build and run stages</br><b>6 Processes</b> Execute the app as one or more stateless processes</br><b>7 Port binding</b> Export services via port binding</br><b>8 Concurrency</b> Scale out via the process model</br><b>9 Disposability</b> Maximize robustness with fast startup and graceful shutdown</br><b>10 Dev/prod parity</b> Keep development, staging, and production as similar as possible</br><b>11 Logs</b> Treat logs as event streams</br><b>12 Admin processes</b> Run admin/management tasks as one-off processes",
+	"source": "https://12factor.net/"
 }
