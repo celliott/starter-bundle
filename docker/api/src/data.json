@@ -1,8 +1,16 @@
 {
-	"title": "Words 2",
+	"title": "Twelve-factor Application",
 	"title_desc": "This is an example python app that gets these words from a NodeJS API.",
-	"word": "Dream",
+	"word": "Introduction",
 	"definition": "A succession of images, ideas, emotions, and sensations that usually occur involuntarily in the mind during certain stages of sleep.",
-	"info": "The content and purpose of dreams are not fully understood, though they have been a topic of scientific speculation, as well as a subject of philosophical and religious interest, throughout recorded history. Dream interpretation is the attempt at drawing meaning from dreams and searching for an underlying message. The scientific study of dreams is called oneirology.",
-	"source": "https://en.wikipedia.org/wiki/Dream"
+	"info": "In the modern era, software is commonly delivered as a service: called web apps, or software-as-a-service. The twelve-factor app is a methodology for building software-as-a-service apps that:
+
+  * Use declarative formats for setup automation, to minimize time and cost for new developers joining the project;
+  * Have a clean contract with the underlying operating system, offering maximum portability between execution environments;
+  * Are suitable for deployment on modern cloud platforms, obviating the need for servers and systems administration;
+  * Minimize divergence between development and production, enabling continuous deployment for maximum agility;
+  * And can scale up without significant changes to tooling, architecture, or development practices.
+
+  The twelve-factor methodology can be applied to apps written in any programming language, and which use any combination of backing services (database, queue, memory cache, etc).",
+	"source": "https://12factor.net/"
 }
