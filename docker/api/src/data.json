@@ -1,16 +1,8 @@
 {
-	"title": "Twelve-factor Application",
+	"title": "Words",
 	"title_desc": "This is an example python app that gets these words from a NodeJS API.",
-	"word": "Introduction",
-	"definition": "A succession of images, ideas, emotions, and sensations that usually occur involuntarily in the mind during certain stages of sleep.",
-	"info": "In the modern era, software is commonly delivered as a service: called web apps, or software-as-a-service. The twelve-factor app is a methodology for building software-as-a-service apps that:
-
-  * Use declarative formats for setup automation, to minimize time and cost for new developers joining the project;
-  * Have a clean contract with the underlying operating system, offering maximum portability between execution environments;
-  * Are suitable for deployment on modern cloud platforms, obviating the need for servers and systems administration;
-  * Minimize divergence between development and production, enabling continuous deployment for maximum agility;
-  * And can scale up without significant changes to tooling, architecture, or development practices.
-
-  The twelve-factor methodology can be applied to apps written in any programming language, and which use any combination of backing services (database, queue, memory cache, etc).",
+	"word": "Twelve-factor Applications",
+	"definition": "A Heroku developed methodology for developers to follow when building modern web-based applications. Also applies when running applications in kubernetes",
+	"info": "<b>1 Codebase</b> One codebase tracked in revision control, many deploys</br><b>2 Dependencies</b> Explicitly declare and isolate dependencies</br><b>3 Config</b> Store config in the environment</br><b>4 Backing Services</b> Treat backing services as attached resources</br><b>5 Build, release, run</b> Strictly separate build and run stages</br><b>6 Processes</b> Execute the app as one or more stateless processes</br><b>7 Port binding</b> Export services via port binding</br><b>8 Concurrency</b> Scale out via the process model</br><b>9 Disposability</b> Maximize robustness with fast startup and graceful shutdown</br><b>10 Dev/prod parity</b> Keep development, staging, and production as similar as possible</br><b>11 Logs</b> Treat logs as event streams</br><b>12 Admin processes</b> Run admin/management tasks as one-off processes",
 	"source": "https://12factor.net/"
 }
