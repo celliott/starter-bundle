@@ -34,6 +34,7 @@ pipeline {
       }
       environment {
           ENVIRONMENT = 'prod'
+          STARTER_BUNDLE_SECRET = 'prod-secret'
       }
       steps {
         timeout(time: 1, unit: 'HOURS') {
