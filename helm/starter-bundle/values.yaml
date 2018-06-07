@@ -1,0 +1,30 @@
+apiUser: "admin"
+frontend:
+  replicaCount: 3
+  image:
+    repository: celliott/starter-bundle-frontend
+    pullPolicy: Always
+    pullSecrets: registry-secret
+  service:
+    name: starter-bundle-frontend
+    type: ClusterIP
+    externalPort: 5000
+    internalPort: 5000
+  resources: {}
+  ingress:
+    enabled: true
+    hostname:
+    tls:
+      enabled: true
+api:
+  replicaCount: 3
+  image:
+    repository: celliott/starter-bundle-api
+    pullPolicy: Always
+    pullSecrets: registry-secret
+  service:
+    name: api
+    type: ClusterIP
+    externalPort: 3000
+    internalPort: 3000
+  resources: {}

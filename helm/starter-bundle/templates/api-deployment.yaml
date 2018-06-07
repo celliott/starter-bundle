@@ -1,0 +1,58 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: {{ template "api.fullname" . }}
+  labels:
+    app: {{ template "name" . }}
+    chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
+    component: {{ .Values.api.service.name }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+    buildNumber: "{{ .Values.build.tag }}"
+spec:
+  replicas: {{ .Values.api.replicaCount }}
+  template:
+    metadata:
+      labels:
+        app: {{ template "name" . }}
+        component: {{ .Values.api.service.name }}
+        release: {{ .Release.Name }}
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.api.image.repository }}:{{ .Values.build.tag }}"
+          imagePullPolicy: {{ .Values.api.image.pullPolicy }}
+          env:
+            - name: NODE_ENV
+              value: production
+            - name: API_PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ template "fullname" . }}
+                  key: api-port
+            - name: API_USER
+              valueFrom:
+                secretKeyRef:
+                  name: {{ template "fullname" . }}
+                  key: api-user
+            - name: API_PASS
+              valueFrom:
+                secretKeyRef:
+                  name: {{ template "fullname" . }}
+                  key: api-pass
+          ports:
+            - containerPort: {{ .Values.api.service.internalPort }}
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: {{ .Values.api.service.internalPort }}
+          readinessProbe:
+            httpGet:
+              path: /healthz
+              port: {{ .Values.api.service.internalPort }}
+          resources:
+{{ toYaml .Values.api.resources | indent 12 }}
+    {{- if .Values.api.nodeSelector }}
+      nodeSelector:
+{{ toYaml .Values.api.nodeSelector | indent 8 }}
+    {{- end }}
