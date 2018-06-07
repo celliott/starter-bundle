@@ -60,17 +60,22 @@ APP_PORT=5000
 ##### Add docker commands to Makefile
 
 ```
-# hack to move private docker registry creds into place
-creds :
-	-@cp -r /.docker /root/
+init :
+	-helm init --upgrade
 
-config :
+config : init
 	docker-compose config --quiet
 
 build : config
 	docker-compose build
 
-push : build creds
+up : init
+	docker-compose up -d
+
+down :
+	docker-compose down
+
+push : build
 	docker-compose push
 ```
 
@@ -85,11 +90,11 @@ NOTE this step is not documented b/c charts will be different depending on the a
 
 ```
 deploy : init
-  -kubectl create namespace $(NAME)
+  -kubectl create namespace $(NAMESPACE)
   -helm init
-	-kubectl create namespace $(SERVICE)
+	-kubectl create namespace $(NAMESPACE)
 	helm upgrade -i $(SERVICE) helm/$(SERVICE) \
-		--namespace $(SERVICE) \
+		--namespace $(NAMESPACE) \
 		--set build.tag=$(BUILD_TAG) \
 		-f values.yaml \
 		--timeout 120 \
