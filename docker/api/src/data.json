@@ -1,5 +1,5 @@
 {
-  "title": "Words",
+  "title": "Words - demo",
   "title_desc": "This is an example python app that gets these words from a NodeJS API.",
   "word": "Twelve-factor Applications",
   "definition": "A Heroku developed methodology for developers to follow when building modern web-based applications. Also applies when running applications in kubernetes",
