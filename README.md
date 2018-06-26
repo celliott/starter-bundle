@@ -1,4 +1,4 @@
-# Example Starter Bundle
+# Starter Bundle
 
 ## Base docker apline images
 * [NodeJS 8.8](https://github.com/nodejs/docker-node/blob/master/8.8/alpine/Dockerfile)
