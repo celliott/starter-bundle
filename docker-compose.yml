@@ -2,7 +2,7 @@ version: '2'
 services:
   api:
     build: docker/api
-    image: ${ORGANIZATION}/${API_NAME}:${IMAGE_TAG}
+    image: ${ECR_BASE}/${API_NAME}:${IMAGE_TAG}
     container_name: ${API_NAME}
     ports:
       - ${API_PORT}:${API_PORT}
@@ -12,7 +12,7 @@ services:
       - API_PASS=${API_PASS}
   frontend:
     build: docker/frontend
-    image: ${ORGANIZATION}/${APP_NAME}:${IMAGE_TAG}
+    image: ${ECR_BASE}/${APP_NAME}:${IMAGE_TAG}
     container_name: ${APP_NAME}
     ports:
       - ${APP_PORT}:${APP_PORT}
