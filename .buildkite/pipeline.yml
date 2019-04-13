@@ -2,12 +2,12 @@ env:
   AWS_DEFAULT_REGION: us-east-1
 
 steps:
-  - label: :docker: build
+  - label: docker build
     command: make docker-build
     agents:
       queue: docker-builder
 
-  - label: :docker: push
+  - label: docker push
     command: make docker-push
     agents:
       queue: docker-builder
@@ -16,7 +16,7 @@ steps:
 
   - block: deploy to dev
 
-  - label: :helm: deploy
+  - label: helm deploy
     command: make helm-deploy
     agents:
       queue: helm-deployer
@@ -26,7 +26,7 @@ steps:
 
   - block: deploy to stg
 
-  - label: :helm: deploy
+  - label: helm deploy
     command: make helm-deploy
     timeout_in_minutes: 10
     agents:
