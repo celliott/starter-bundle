@@ -2,7 +2,6 @@ env:
   AWS_DEFAULT_REGION: us-east-1
 
 steps:
-
   - label: [docker] build
     command: make docker-build
     agents:
