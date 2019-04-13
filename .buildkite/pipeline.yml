@@ -18,8 +18,8 @@ steps:
 
   - label: helm deploy
     command: |
-      echo "[Info] EKS_CLUSTER: "$EKS_CLUSTER
-      echo "[Info] ENVIRONMENT: "$ENVIRONMENT
+      echo "[Info] EKS_CLUSTER: ${EKS_CLUSTER}"
+      echo "[Info] ENVIRONMENT: ${ENVIRONMENT}"
       echo helm-deploy
     agents:
       queue: helm-deployer
@@ -31,8 +31,8 @@ steps:
 
   - label: helm deploy
     command: |
-      echo "[Info] EKS_CLUSTER: "$EKS_CLUSTER
-      echo "[Info] ENVIRONMENT: "$ENVIRONMENT
+      echo "[Info] EKS_CLUSTER: ${EKS_CLUSTER}"
+      echo "[Info] ENVIRONMENT: ${ENVIRONMENT}"
       echo helm-deploy
     agents:
       queue: helm-deployer
