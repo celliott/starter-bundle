@@ -7,7 +7,7 @@ check-env :
 	fi
 
 ecr-init :
-	$$(aws ecr get-login --no-include-email --region=us-west-2)
+	$$(aws ecr get-login --no-include-email --region=${AWS_DEFAULT_REGION})
 
 docker-config :
 	docker-compose config --quiet
