@@ -1,25 +1,30 @@
 include defaults.mk
-export
 
-init :
-	-helm init --upgrade
+check-env :
 
-config : init
+	@if [ -z $(ENVIRONMENT) ]; then \
+		echo "ENVIRONMENT must be set; export ENVIRONMENT=<env>"; exit 10; \
+	fi
+
+ecr-init :
+	$$(aws ecr get-login --no-include-email --region=us-west-2)
+
+docker-config :
 	docker-compose config --quiet
 
-build : config
+docker-build : docker-config
 	docker-compose build
 
-up : init
+docker-up : docker-init
 	docker-compose up -d
 
-down :
+docker-down :
 	docker-compose down
 
-push : build
+docker-push : ecr-init docker-build
 	docker-compose push
 
-deploy : init
+helm-deploy :
 	-helm init
 	-kubectl create namespace $(SERVICE)
 	helm upgrade -i $(NAMESPACE) helm/$(SERVICE) \
@@ -29,5 +34,5 @@ deploy : init
 		--set apiPass=$(API_PASS) \
 		--set secret=$(STARTER_BUNDLE_SECRET)
 
-delete : init
+helm-delete : init
 	helm del --purge $(SERVICE)

@@ -19,3 +19,5 @@ API_PASS ?= mypassword
 APP_NAME ?= starter-bundle-frontend
 APP_PORT ?= 5000
 STARTER_BUNDLE_SECRET ?= nosecret
+
+export
