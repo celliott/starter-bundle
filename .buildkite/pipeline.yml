@@ -17,7 +17,10 @@ steps:
   - block: deploy to dev
 
   - label: helm deploy
-    command: echo helm-deploy
+    command: |
+      echo "[Info] EKS_CLUSTER: "$EKS_CLUSTER
+      echo "[Info] ENVIRONMENT: "$ENVIRONMENT
+      echo helm-deploy
     agents:
       queue: helm-deployer
     env:
@@ -27,7 +30,10 @@ steps:
   - block: deploy to stg
 
   - label: helm deploy
-    command: echo helm-deploy
+    command: |
+      echo "[Info] EKS_CLUSTER: "$EKS_CLUSTER
+      echo "[Info] ENVIRONMENT: "$ENVIRONMENT
+      echo helm-deploy
     agents:
       queue: helm-deployer
     env:
