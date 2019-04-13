@@ -17,7 +17,7 @@ steps:
   - block: deploy to dev
 
   - label: helm deploy
-    command: make helm-deploy
+    command: echo helm-deploy
     agents:
       queue: helm-deployer
     env:
@@ -27,8 +27,7 @@ steps:
   - block: deploy to stg
 
   - label: helm deploy
-    command: make helm-deploy
-    timeout_in_minutes: 10
+    command: echo helm-deploy
     agents:
       queue: helm-deployer
     env:
