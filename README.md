@@ -1,5 +1,8 @@
 # Starter Bundle
 
+> TODO
+> Add github action to build and store in github archives
+
 ## Base docker apline images
 * [NodeJS 8.8](https://github.com/nodejs/docker-node/blob/master/8.8/alpine/Dockerfile)
 * [Python 2.7](https://github.com/docker-library/python/blob/master/2.7/alpine3.4/Dockerfile)

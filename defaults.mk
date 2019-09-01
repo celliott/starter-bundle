@@ -1,6 +1,7 @@
 # Docker Variables
 AWS_DEFAULT_REGION ?= us-east-1
 ECR_BASE ?= 397159387476.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com
+ECR_BASE=docker.pkg.github.com/celliott/starter-bundle
 IMAGE_TAG ?= $(shell git log -n 1 --pretty=format:'%h')
 
 # project vars
